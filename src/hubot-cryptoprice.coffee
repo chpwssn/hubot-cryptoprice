@@ -21,13 +21,17 @@ module.exports = (robot) ->
     if tokens.hasOwnProperty(token)
       tokenObj = tokens[token]
       # Check to see if the token has the quote token
-      if !tokenObj.hasOwnProperty(quote)
-        response.push("I don't know how to get #{token} in terms of #{quote} so I'll have to use #{defaultQuote}")
-        quote = defaultQuote
-      tokens[token][quote](robot, res, (price) ->
-        response.push("#{token} last traded for #{price} #{quote}")
-        res.send(response.join('\n'))
-      )
+      if tokenObj.hasOwnProperty(quote)
+        tokens[token][quote](robot, res, (price) ->
+          response.push("#{token} last traded for #{price} #{quote}")
+          res.send(response.join('\n'))
+        )
+      else
+        # response.push("I don't know how to get #{token} in terms of #{quote} so I'll have to use #{defaultQuote}")
+        # quote = defaultQuote
+        tokens.wildcard(robot, token, quote)
     else
-      res.send "Sorry I don't know how to fetch #{token}..."
+      found = false
+      res.send "Sorry I don't know how to fetch #{token}/#{quote}, I'll see if I can find somewhere it is traded..."
+      tokens.wildcard(robot, res, token, quote)
     
