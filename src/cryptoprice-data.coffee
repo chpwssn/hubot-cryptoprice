@@ -25,11 +25,11 @@ tokens = {
             exchanges.GDAX.fetchLastTokenPrice(robot, 'BTC', 'USD', cb)
 
     }
-    # LTC: {
-    #     base: 'USD',
-    #     USD: (robot, msg, cb) -> 
-    #         exchanges.GDAX.fetchLastTokenPrice(robot, 'LTC', 'USD', cb)
-    # },
+    LTC: {
+        base: 'USD',
+        USD: (robot, msg, cb) -> 
+            exchanges.GDAX.fetchLastTokenPrice(robot, 'LTC', 'USD', cb)
+    },
     wildcard: (robot, res, baseToken, quoteToken) ->
         found = false
         Object.keys(exchanges).forEach (x, i) ->
