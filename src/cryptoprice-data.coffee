@@ -24,7 +24,7 @@ tokens = {
         USD: (robot, msg, cb) -> 
             exchanges.GDAX.fetchLastTokenPrice(robot, 'BTC', 'USD', cb)
 
-    }
+    },
     LTC: {
         base: 'USD',
         USD: (robot, msg, cb) -> 
