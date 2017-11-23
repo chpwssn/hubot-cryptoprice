@@ -2,7 +2,8 @@
 #   A script to fetch the price of crypto
 #
 # Commands:
-#   .price <token> - fetch the price of the given token
+#   .price <token> - fetch the price of the given token with USD quote
+#   .price <baseToken> <quoteToken> - fetch the price of the given token in the given quote
 #
 # Notes:
 #   <optional notes required for the script>
