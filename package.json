@@ -1,7 +1,7 @@
 {
   "name": "hubot-cryptoprice",
   "description": "A script to fetch the price of crypto",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Chip Wasson <chip@wasson.io>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts, cryptocurrency",
